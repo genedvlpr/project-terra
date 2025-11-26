@@ -150,13 +150,13 @@ git pull origin master
 To build the program as a runnable background service, follow the steps below.
 ```shell
 # terra-rpi-3@terra:~ $
-cd ~/dev/project-terra/
-chmod +x ~/sensor_project/main.py
+cd ~/dev/project-terra/rpi/
+chmod +x ~/sensor_project/rpi/main.py
 # Edit the Crontab:
 crontab -e
 # Add the Startup Command: Scroll to the bottom of the file and add the following line.
 # This executes your Python script using the correct Python interpreter.
-@reboot /usr/bin/python3 /home/terra-rpi-3/dev/project-terra/main.py &
+@reboot /usr/bin/python3 /home/terra-rpi-3/dev/project-terra/rpi/main.py &
 ```
 ```
 The & at the end is crucial—it runs the script in the background, allowing the boot process to complete.
@@ -178,7 +178,7 @@ pgrep -f dht11_reader.py # main.py
 ```
 To run a python script:
 ```shell
-# terra-rpi-3@terra:~/dev/project-terra $
+# terra-rpi-3@terra:~/dev/project-terra/rpi/ $
 python3 main.py
 PROJECT TERRA MAIN MODULE # This is the result
 ```
