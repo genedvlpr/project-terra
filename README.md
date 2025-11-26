@@ -150,3 +150,9 @@ sudo reboot
 pgrep -f dht11_reader.py # main.py
 # If a process ID (PID) number is displayed, your script is running successfully!
 ```
+To run a python script:
+```shell
+# terra-rpi-3@terra:~/dev/project-terra $
+python3 main.py
+'PROJECT TERRA MAIN MODULE'
+```
