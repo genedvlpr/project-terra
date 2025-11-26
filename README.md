@@ -129,6 +129,8 @@ sudo apt-get install -y python3-pip libgpiod2
 pip3 install adafruit-blinka
 # Example: Install the specific library you need
 pip3 install adafruit-circuitpython-dht
+# Error fixing
+pip install --upgrade --force-reinstall adafruit-blinka
 ```
 - The head directory of the project is on  `~/dev/project-terra/`.
 
