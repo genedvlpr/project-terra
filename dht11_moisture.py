@@ -14,7 +14,7 @@ def setup():
     # Set the obstacle pin as an INPUT pin
     # The pull-up/pull-down resistor is often not needed as the HD-38 module
     # has a built-in pull-up resistor (due to the comparator logic).
-    GPIO.setup(OBSTACLE_PIN, GPIO.IN) 
+    GPIO.setup(OBSTACLE_PIN, GPIO.IN)
     
     print("GPIO setup complete. Waiting for sensor readings...")
 
