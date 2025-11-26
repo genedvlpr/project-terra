@@ -2,7 +2,7 @@
 
 This repository contains the source codes and config files for this project.
 
-Requirements
+### Requirements
 1. Raspberry PI 3B+
 2. Raspbery Pi Imager
 3. Python3
@@ -10,6 +10,8 @@ Requirements
 5. Flutter with Dart
 6. Sensors
    - DHT11
+
+### Flashing the OS
 
 1. Download and install Raspberry PI Imager
 2. Flashing the OS
