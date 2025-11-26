@@ -186,4 +186,5 @@ PROJECT TERRA MAIN MODULE # This is the result
 ```shell
 # terra-rpi-3@terra:~/dev/project-terra $
 sudo shutdown now
+# Once the green LED is off and has been off for several seconds, it is safe to unplug the power cable from the Raspberry Pi.
 ```
