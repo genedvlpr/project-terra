@@ -8,7 +8,7 @@ import traceback # Useful for better error logging
 
 # --- Configuration ---
 # Your specified Data Pin (Physical Pin 7) corresponds to BCM GPIO 4
-DHT_PIN = board.D4 
+DHT_PIN = 4 
 SENSOR_ID = "RPI_SENSOR_1" # Unique ID for this device
 
 # Initialize the DHT11 device
