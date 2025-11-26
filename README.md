@@ -1,3 +1,16 @@
+# TERRA
+
+This repository contains the source codes and config files for this project.
+
+Requirements
+1. Raspberry PI 3B+
+2. Raspbery Pi Imager
+3. Python3
+4. Android Studio
+5. Flutter with Dart
+6. Sensors
+   - DHT11
+
 1. Download and install Raspberry PI Imager
 2. Flashing the OS
     - In `Device` section, select `Raspberry PI 3` then click `Next`.
