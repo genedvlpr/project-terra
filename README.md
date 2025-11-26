@@ -12,7 +12,7 @@ This repository contains the source codes and config files for this project.
 4. Android Studio
 5. Flutter with Dart
 6. Sensors
-   - DHT11
+   - DHT11, HD-38
 
 ### Flashing the OS
 
@@ -173,7 +173,7 @@ sudo reboot
 # Wait for a few minutes for the Pi to reboot and reconnect to the network.
 # SSH back in (ssh terra-rpi-3@<IP_ADDRESS>).
 # Check the Running Process: Use the following command to see if your script is active:
-pgrep -f dht11_reader.py # main.py
+pgrep -f dht11_temp_humidity.py # main.py
 # If a process ID (PID) number is displayed, your script is running successfully!
 ```
 To run a python script:
