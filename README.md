@@ -141,7 +141,7 @@ Note: Make sure Git Bash is already installed on Windows.
 `git clone https://github.com/genedvlpr/project-terra.git`
 2. The development of python scripts will be in Windows.
 3. After creating python scripts (in Windows), push the changes in the repository.
-   - Note that all the python scripts must be inside the `project-terra` directory created by the cloning process.
+   - Note that all the python scripts must be inside the `project-terra/rpi` directory created by the cloning process.
    - Python codes must be saved as `sensor-name.py` (Python codes as `.py` in small case naming convention)
    - You can push the changes in the repository by these commands.
    ```shell
