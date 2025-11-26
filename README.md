@@ -88,6 +88,8 @@ terra-rpi-3@terra:~ $
 ### Cloning the GitHub Repository
 The following are the shell commands, enter one-by-one.
 ```shell
+sudo apt-get install git # Install git first
+sudo apt-get install python3 # Install Python3
 mkdir ~/dev ## Make a directory
 cd ~/dev # Go to the dev directory
 git clone https://github.com/genedvlpr/project-terra.git # Clone the repository
