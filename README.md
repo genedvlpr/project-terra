@@ -100,6 +100,8 @@ sudo apt-get install python3 # Install Python3
 sudo apt-get update
 # Install Python 3 development headers
 sudo apt-get install python3-dev
+# Install pip3
+sudo apt install python3-pip
 # Install the necessary library (sometimes needed for compilation)
 sudo pip3 install setuptools
 # Install the Adafruit DHT library
