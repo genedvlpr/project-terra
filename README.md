@@ -118,17 +118,17 @@ sudo apt-get install python3-dev
 # Install pip3
 sudo apt install python3-pip
 # Install the necessary library (sometimes needed for compilation)
-sudo pip3 install setuptools
+pip3 install setuptools
 # Install the Adafruit DHT library
-sudo pip3 install adafruit-circuitpython-dht
+pip3 install adafruit-circuitpython-dht
 # Install the board library (helps with pin definitions)
-sudo pip3 install board
+pip3 install board
 # Install the libgpiod2 library
 sudo apt-get install -y python3-pip libgpiod2
 # Install the core Blinka library
-sudo pip3 install adafruit-blinka
+pip3 install adafruit-blinka
 # Example: Install the specific library you need
-sudo pip3 install adafruit-fancy-widget
+pip3 install adafruit-circuitpython-dht
 ```
 - The head directory of the project is on  `~/dev/project-terra/`.
 
