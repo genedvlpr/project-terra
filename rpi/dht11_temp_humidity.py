@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import board
+import adafruit_blinka as board
 import adafruit_dht
 import time
 import json
