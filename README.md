@@ -5,6 +5,9 @@ This repository contains the source codes and config files for this project.
 ### Requirements
 1. Raspberry PI 3B+
 2. Raspbery Pi Imager
+3. GitBash for Windows
+   - https://git-scm.com/install/windows
+   - Download and install `Git for Windows/x64 Setup` on Windows
 3. Python3
 4. Android Studio
 5. Flutter with Dart
