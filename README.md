@@ -16,7 +16,7 @@ This repository contains the source codes and config files for this project.
 1. Download and install Raspberry PI Imager
 2. Flashing the OS
     - In `Device` section, select `Raspberry PI 3` then click `Next`.
-    - In 'OS' setion, select `Raspberry PI OS (other)` then click `Raspberry PI OS Lite (64-bit)`.
+    - In `OS` setion, select `Raspberry PI OS (other)` then click `Raspberry PI OS Lite (64-bit)`.
     - Under `Storage` select the `Mass Storage Device USB Device` then click `Next`.
     - Enter `terra` as Hostname.
     - In `Localisation`, set `Manila (Philippines)`.
