@@ -4,11 +4,18 @@ import adafruit_blinka as board
 import adafruit_dht
 import time
 import json
-import traceback # Useful for better error logging
+import traceback 
+# Import the specific Pin definitions
+from adafruit_blinka.microcontroller.bcm283x import pin
+from adafruit_blinka.microcontroller.bcm283x.pin import Pin
+import adafruit_dht
 
 # --- Configuration ---
-# Your specified Data Pin (Physical Pin 7) corresponds to BCM GPIO 4
-DHT_PIN = 4 
+# Use BCM GPIO pin 4 directly to create the Pin object.
+# This corresponds to Physical Pin 7.
+# We explicitly create the Pin object to satisfy Blinka's requirements.
+# Ensure 'pin' is imported from 'adafruit_blinka.microcontroller.bcm283x.pin'
+DHT_PIN = Pin(4)
 SENSOR_ID = "RPI_SENSOR_1" # Unique ID for this device
 
 # Initialize the DHT11 device
