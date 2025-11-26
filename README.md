@@ -198,3 +198,6 @@ PROJECT TERRA MAIN MODULE # This is the result
 sudo shutdown now
 # Once the green LED is off and has been off for several seconds, it is safe to unplug the power cable from the Raspberry Pi.
 ```
+
+### Sample Run Results
+![alt text](/assets/image.png)
