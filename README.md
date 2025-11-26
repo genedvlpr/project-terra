@@ -88,7 +88,7 @@ permitted by applicable law.
 terra-rpi-3@terra:~ $
 ```
 
-### Cloning the GitHub Repository
+### Cloning the GitHub Repository (in RPi through SSH Connection)
 The following are the shell commands, enter one-by-one.
 ```shell
 # Pre-requisites (Package Installation)
