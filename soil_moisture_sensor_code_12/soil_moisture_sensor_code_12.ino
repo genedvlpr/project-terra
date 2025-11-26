@@ -1,6 +1,6 @@
 
 const int analogPin = A0;   
-const int digitalPin = 2;   
+const int digitalPin = 2;
 
 void setup() {
   Serial.begin(9600);
@@ -21,5 +21,3 @@ void loop() {
 
   delay(1000);
 }
-
-
