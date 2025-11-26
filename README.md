@@ -93,9 +93,60 @@ The following are the shell commands, enter one-by-one.
 ```shell
 sudo apt-get install git # Install git first
 sudo apt-get install python3 # Install Python3
-mkdir ~/dev ## Make a directory
+mkdir ~/dev # Make a directory
 cd ~/dev # Go to the dev directory
 git clone https://github.com/genedvlpr/project-terra.git # Clone the repository
-cd ~/project-terra/
+cd ~/dev/project-terra/
 git pull origin master
+```
+- The head directory of the project is on  `~/dev/project-terra/`.
+
+### Coding
+The workflow for the development is described as follows:
+Note: Make sure Git Bash is already installed on Windows.
+1. Clone the Github repository in Windows
+`git clone https://github.com/genedvlpr/project-terra.git`
+2. The development of python scripts will be in Windows.
+3. After creating python scripts (in Windows), push the changes in the repository.
+   - Note that all the python scripts must be inside the `project-terra` directory created by the cloning process.
+   - You can push the changes in the repository by these commands.
+   ```shell
+   git add .
+   git commit -m "Message of the commit" # e.g. added dht11 sensor capabilities
+   git push origin master
+   ```
+4. After pushing new codes to the repo, you should access the RPi via ssh as described in the steps earlier and pull the changes from the remote repository.
+```shell
+cd ~/dev/project-terra/
+git pull origin master
+```
+5. Build process below.
+
+### Build
+To build the program as a runnable background service, follow the steps below.
+```shell
+cd ~/dev/project-terra/
+chmod +x ~/sensor_project/main.py
+# Edit the Crontab:
+crontab -e
+# Add the Startup Command: Scroll to the bottom of the file and add the following line.
+# This executes your Python script using the correct Python interpreter.
+@reboot /usr/bin/python3 /home/terra-rpi-3/dev/project-terra/main.py &
+```
+```
+The & at the end is crucial—it runs the script in the background, allowing the boot process to complete.
+```
+```
+Save and Exit:If using nano: Press Ctrl + O (to Write Out/Save), then Enter, and then Ctrl + X (to exit).
+The console should confirm, "installing new crontab".
+```
+Test the setup:
+```shell
+# Reboot the RPi
+sudo reboot
+# Wait for a few minutes for the Pi to reboot and reconnect to the network.
+# SSH back in (ssh terra-rpi-3@<IP_ADDRESS>).
+# Check the Running Process: Use the following command to see if your script is active:
+pgrep -f dht11_reader.py # main.py
+# If a process ID (PID) number is displayed, your script is running successfully!
 ```
