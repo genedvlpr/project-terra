@@ -91,8 +91,28 @@ terra-rpi-3@terra:~ $
 ### Cloning the GitHub Repository
 The following are the shell commands, enter one-by-one.
 ```shell
+# Pre-requisites (Package Installation)
 sudo apt-get install git # Install git first
 sudo apt-get install python3 # Install Python3
+
+# Update the package list
+sudo apt-get update
+# Install Python 3 development headers
+sudo apt-get install python3-dev
+# Install the necessary library (sometimes needed for compilation)
+sudo pip3 install setuptools
+# Install the Adafruit DHT library
+sudo pip3 install adafruit-circuitpython-dht
+# Install the board library (helps with pin definitions)
+sudo pip3 install board
+# Install the libgpiod2 library
+sudo apt-get install -y python3-pip libgpiod2
+# Install the core Blinka library
+sudo pip3 install adafruit-blinka
+# Example: Install the specific library you need
+sudo pip3 install adafruit-fancy-widget
+```
+```shell
 mkdir ~/dev # Make a directory
 cd ~/dev # Go to the dev directory
 git clone https://github.com/genedvlpr/project-terra.git # Clone the repository
