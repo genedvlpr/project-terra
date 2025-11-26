@@ -69,11 +69,11 @@ This key is not known by any other names.
 Are you sure you want to continue connecting (yes/no/[fingerprint])? (yes)
 ```
 - If asked for the password, enter the password `d1gyshvb`
-```shell
+```
 terra-rpi-3@192.168.254.109's password: d1gyshvb
 ```
 - If the connection is successful, you can now see these:
-```shell
+```
 Linux terra 6.12.47+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1 (2025-09-16) aarch64
 
 The programs included with the Debian GNU/Linux system are free software;
