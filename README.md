@@ -39,7 +39,7 @@ This repository contains the source codes and config files for this project.
 ### Configuration
 - Find the config.txt in the newly flashed image (in File Explorer, open `bootfs` drive)
 - Open `config.txt` and add these lines at the end of the file.
-```shell
+```
 hdmi_force_hotplug=1
 hdmi_safe=1  # Use this for maximum compatibility (low resolution)
 ```
@@ -48,7 +48,7 @@ hdmi_safe=1  # Use this for maximum compatibility (low resolution)
 ### First Boot
 - Connect an external monitor to see what's happening in the initial boot setup.
 - Wait a few minutes until you see these:
-```shell
+```
 Debian GNU/Linux 13 terra tty1
 ...
 My IP Address is (e.g. 192.168.254.109, if you see something like 127.0.1.1, it means its not connected with the wifi)
@@ -62,7 +62,7 @@ ssh terra-rpi-3@192.168.254.109
 ```
 - Change with the actual IP Address.
 - The result should be something like this:
-```shell
+```
 The authenticity of host '192.168.254.109 (192.168.254.109)' can't be established.
 ED25519 key fingerprint is SHA256:EmwlcPLxzIBy5mrwLG8gNOyTiGz+SNHj4MMmPZ3m0Mg.
 This key is not known by any other names.
