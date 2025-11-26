@@ -31,5 +31,5 @@ This repository contains the source codes and config files for this project.
         + Create auth key and launch Raspberry PI Manager
     - Write the image.
         + In case of error in writing caused by storage can't be formatted, try to use `Disk Management` in Windows (Use Gemini for the steps on how to format the storage `micro sd`).
-        + After formatting using the `Disk Management`, rety the `Write` process (make sure to check the `User` and `Wifi` credentials).
+        + After formatting using the `Disk Management`, retry the `Write` process (make sure to check the `User` and `Wifi` credentials).
     - After flashing the OS, put the SD Card to RPi.
