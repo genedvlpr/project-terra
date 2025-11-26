@@ -91,6 +91,7 @@ terra-rpi-3@terra:~ $
 ### Cloning the GitHub Repository (in RPi through SSH Connection)
 The following are the shell commands, enter one-by-one.
 ```shell
+# terra-rpi-3@terra:~ $
 # Pre-requisites (Package Installation)
 sudo apt-get install git # Install git first
 sudo apt-get install python3 # Install Python3
@@ -113,6 +114,7 @@ sudo pip3 install adafruit-blinka
 sudo pip3 install adafruit-fancy-widget
 ```
 ```shell
+# terra-rpi-3@terra:~ $
 mkdir ~/dev # Make a directory
 cd ~/dev # Go to the dev directory
 git clone https://github.com/genedvlpr/project-terra.git # Clone the repository
@@ -137,6 +139,7 @@ Note: Make sure Git Bash is already installed on Windows.
    ```
 4. After pushing new codes to the repo, you should access the RPi via ssh as described in the steps earlier and pull the changes from the remote repository.
 ```shell
+# terra-rpi-3@terra:~ $
 cd ~/dev/project-terra/
 git pull origin master
 ```
@@ -145,6 +148,7 @@ git pull origin master
 ### Build
 To build the program as a runnable background service, follow the steps below.
 ```shell
+# terra-rpi-3@terra:~ $
 cd ~/dev/project-terra/
 chmod +x ~/sensor_project/main.py
 # Edit the Crontab:
@@ -162,6 +166,7 @@ The console should confirm, "installing new crontab".
 ```
 Test the setup:
 ```shell
+# terra-rpi-3@terra:~/dev/project-terra $
 # Reboot the RPi
 sudo reboot
 # Wait for a few minutes for the Pi to reboot and reconnect to the network.
@@ -175,4 +180,10 @@ To run a python script:
 # terra-rpi-3@terra:~/dev/project-terra $
 python3 main.py
 PROJECT TERRA MAIN MODULE # This is the result
+```
+
+### Shutdown the RPi
+```shell
+# terra-rpi-3@terra:~/dev/project-terra $
+sudo shutdown now
 ```
