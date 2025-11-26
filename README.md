@@ -84,3 +84,13 @@ Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
 permitted by applicable law.
 terra-rpi-3@terra:~ $
 ```
+
+### Cloning the GitHub Repository
+The following are the shell commands, enter one-by-one.
+```shell
+mkdir ~/dev ## Make a directory
+cd ~/dev # Go to the dev directory
+git clone https://github.com/genedvlpr/project-terra.git # Clone the repository
+cd ~/project-terra/
+git pull origin master
+```
