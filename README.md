@@ -11,6 +11,9 @@ This repository contains the source codes and config files for this project.
 3. Python3
 4. Android Studio
 5. Flutter with Dart
+6. VSCode (Python Development)
+   - Download and install VSCode: [https://code.visualstudio.com/]
+   - Install extension: [https://marketplace.visualstudio.com/items?itemName=ms-python.python]
 6. Sensors
    - DHT11, HD-38
 
@@ -30,7 +33,7 @@ This repository contains the source codes and config files for this project.
     ```
     - Conifgure Network in `WiFi` section.
     - Enable `Raspberry PI Connect`.
-    - Sign up in `https://id.raspberrypi.com/sign-up`
+    - Sign up in [https://id.raspberrypi.com/sign-up]
         + Create auth key and launch Raspberry PI Manager
     - Write the image.
         + In case of error in writing caused by storage can't be formatted, try to use `Disk Management` in Windows (Use Gemini for the steps on how to format the storage `micro sd`).
