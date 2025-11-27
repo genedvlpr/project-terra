@@ -1,0 +1,107 @@
+# File: moisture_sensor.py
+# Description: Python script for the Raspberry Pi 3 B+ to read an analog
+#              soil moisture sensor (like the HD-38/YL-69) via an MCP3008 ADC.
+
+import time
+import spidev # Library for SPI communication
+
+# --- SPI Setup ---
+# The MCP3008 connects to the Raspberry Pi's SPI bus.
+# Bus 0, Device 0 (CE0) is the standard configuration.
+spi = spidev.SpiDev(0, 0)
+spi.max_speed_hz = 1000000  # Set SPI speed to 1MHz
+
+# --- Moisture Sensor Setup ---
+# The MCP3008 has 8 analog input channels (0 to 7).
+# Connect the analog output (A0) of the moisture sensor module to one of these.
+MOISTURE_CHANNEL = 0 
+
+# Calibration Values (Adjust these based on your specific sensor/environment)
+# Max ADC value (0V - dry) should be close to 1023 (10-bit ADC)
+# Min ADC value (3.3V - submerged in water)
+DRY_VALUE = 800    # Reading when sensor is completely dry (higher value)
+WET_VALUE = 300    # Reading when sensor is fully immersed/very wet (lower value)
+
+def read_adc(channel):
+    """
+    Reads the raw 10-bit value from the specified MCP3008 ADC channel.
+    The communication format required by the MCP3008 is 3 bytes:
+    1: Start bit (1)
+    2: Single-ended mode bit (1) + Channel (e.g., 000 for channel 0)
+    3: Empty byte (0)
+    
+    Returns: A raw analog value (0-1023).
+    """
+    # Build the required command sequence for the MCP3008
+    # 0x01 is the start bit
+    # ((8 + channel) << 4) is the mode (single-ended) and channel selection
+    r = spi.xfer2([1, (8 + channel) << 4, 0])
+    
+    # The result is in the second two bytes (bits 9-0)
+    # The second byte (r[1]) has the last two bits of the result.
+    # The third byte (r[2]) has the first eight bits of the result.
+    # We combine them: ((r[1] & 0x03) << 8) | r[2]
+    adc_out = ((r[1] & 0x03) << 8) | r[2]
+    
+    return adc_out
+
+def get_moisture_data(raw_value):
+    """
+    Converts the raw ADC value into a more readable format (percentage and status).
+    """
+    # Clamp the raw value between our calibrated dry/wet limits
+    clamped_value = max(WET_VALUE, min(DRY_VALUE, raw_value))
+    
+    # Calculate the range size
+    value_range = DRY_VALUE - WET_VALUE
+    
+    # Determine how far the value is from the DRY end (higher value = drier)
+    # The lower the ADC value, the higher the moisture.
+    # We invert the scale: (DRY_VALUE - clamped_value) / value_range
+    moisture_ratio = (DRY_VALUE - clamped_value) / value_range
+    moisture_percentage = int(moisture_ratio * 100)
+
+    # Determine status
+    if moisture_percentage >= 70:
+        status = "Very Wet (Submerged)"
+    elif moisture_percentage >= 30:
+        status = "Moist (Optimal)"
+    else:
+        status = "Dry (Needs Watering)"
+        
+    return moisture_percentage, status
+
+def main():
+    """Main function to continuously measure and print moisture level."""
+    print("Starting Moisture Sensor Reading...")
+    print(f"Reading Analog Channel: {MOISTURE_CHANNEL}")
+    
+    # IMPORTANT: Ensure the spidev kernel module is enabled:
+    # 1. Run 'sudo raspi-config'
+    # 2. Select 'Interface Options' -> 'SPI' -> 'Yes'
+    # 3. Reboot the Pi.
+    
+    try:
+        while True:
+            # Get the raw 10-bit reading
+            raw_adc_value = read_adc(MOISTURE_CHANNEL)
+            
+            # Convert to user-friendly data
+            percentage, status = get_moisture_data(raw_adc_value)
+            
+            # Print the result
+            print(f"Raw ADC: {raw_adc_value: <4} | Moisture: {percentage}% | Status: {status}")
+            
+            # Wait 5 seconds before the next measurement
+            time.sleep(5)
+
+    except KeyboardInterrupt:
+        print("\nMeasurement stopped by user.")
+    except Exception as e:
+        print(f"\nAn error occurred: {e}. Check SPI wiring and configuration.")
+    finally:
+        spi.close()
+        print("SPI connection closed.")
+
+if __name__ == '__main__':
+    main()
