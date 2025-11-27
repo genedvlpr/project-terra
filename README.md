@@ -12,8 +12,8 @@ This repository contains the source codes and config files for this project.
 4. Android Studio
 5. Flutter with Dart
 6. VSCode (Python Development)
-   - Download and install VSCode: [https://code.visualstudio.com/]
-   - Install extension: [https://marketplace.visualstudio.com/items?itemName=ms-python.python]
+   - Download and install VSCode: https://code.visualstudio.com/
+   - Install extension: https://marketplace.visualstudio.com/items?itemName=ms-python.python
 6. Sensors
    - DHT11, HD-38
 
